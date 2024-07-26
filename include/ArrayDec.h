@@ -20,7 +20,7 @@ class Array {
     int getSize() const { return size; }
     int getCap() const { return N; }
 
-    void printArray(void (*debug)(T) = [](T val) { std::cout << val;}) const {
+    void printArray(std::function<void(T)>debug = [](T val) { std::cout << val; }) const {
       std::cout << "[";
       for (int i = 0; i < size - 1; ++i) {
         debug(m_buffer[i]); 
